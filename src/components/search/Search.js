@@ -39,7 +39,7 @@ function Search() {
   //result per page
   const [resultPerPage,setResultPerPage]=useState(10)
   const [productsCount,setProductsCount]=useState(0)
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
 
   //form submission
   // let onFormSubmit = (obj)=>{

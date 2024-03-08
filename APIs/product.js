@@ -54,7 +54,7 @@ productApp.get(
         ],
       })
       .toArray();
-    let skip = Number(req.query.page_no) * Number(req.query.pageC);
+    let skip = (Number(req.query.page_no)-1) * Number(req.query.pageC);
     const productsCount = products.length;
     products = products.slice(skip, skip + Number(req.query.pageC));
 
