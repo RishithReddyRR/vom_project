@@ -55,7 +55,7 @@ function Search() {
       let call = async () => {
         console.log("serach string is", searchData);
         let res = await axios.get(
-          `http://localhost:3000/product/search?keyword=${searchData}&brand=${selectedBrand}&type=${selectedType}&platform=${selectedPlatform}&priceL=${minPrice}&priceH=${maxPrice}&page_no=${currentPage}&pageC=${resultPerPage}`
+          `http://localhost:3001/product/search?keyword=${searchData}&brand=${selectedBrand}&type=${selectedType}&platform=${selectedPlatform}&priceL=${minPrice}&priceH=${maxPrice}&page_no=${currentPage}&pageC=${resultPerPage}`
         );
         console.log(res);
         if (res.data.message == "no items found") {
@@ -169,6 +169,9 @@ function Search() {
                   onChange={handleMaxPriceChange}
                   placeholder="Max Price"
                 />
+              </div>
+              <div className="filter">
+                <input type="text" placeholder="No Of Products per page" onChange={(e)=>setResultPerPage(e.target.value)} />
               </div>
             </div>
             <button onClick={() => setFlag(!flag)}>filter</button>
